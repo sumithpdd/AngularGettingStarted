@@ -75,9 +75,9 @@ export class ProductListComponent implements OnInit {
       imageUrl: 'assets/images/xbox-controller.png',
     },
   ];
-  constructor(){
+  constructor() {
     this.filteredProducts = this.products;
-    this.listFilter='cart';
+    this.listFilter = 'cart';
   }
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
@@ -88,6 +88,9 @@ export class ProductListComponent implements OnInit {
   }
   toggleImage(): void {
     this.showImage = !this.showImage;
+  }
+  onRatingClicked(message: string): void {
+    this.pageTitle = 'Product List :' + message;
   }
   ngOnInit(): void {
     console.log('In OnInit');
